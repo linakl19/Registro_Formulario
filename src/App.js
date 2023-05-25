@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import FormSignUp from './components/FormSignUp';
+import { Container } from '@mui/system';
+import { Typography } from '@mui/material';
 
 function App() {
+
+  const handleSubmit=(valores)=>{
+    console.log("APPJS: ", valores)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container component="section" maxWidth="sm">
+      <Typography 
+        variant="h3" 
+        align="center" 
+        component="h1"
+      >
+        Formulario de Registro
+      </Typography>
+      <FormSignUp handleSubmit={handleSubmit}/>
+    </Container>
   );
 }
 
 export default App;
+
